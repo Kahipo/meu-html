@@ -117,7 +117,19 @@
 </head>
 <body>
 <script>
+  // Domínio para links relativos
   const dominioRedeCanais = 'https://redecanais.gs';
+
+  // Cálculo da data atual no formato AAAAMMDD
+  function pad(valor) {
+    return valor < 10 ? '0' + valor : valor;
+  }
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = pad(hoje.getMonth() + 1);
+  const dia = pad(hoje.getDate());
+  const dataAtual = `${ano}${mes}${dia}`;
+
   const cards = [
     {titulo:'Dois Homens e Meio', imagem:'https://imgur.com/Z5Ju1pl.png', url:'/dois-homens-e-meio-two-and-a-half-men-dublado-legendado-lista-de-episodios_b6a6f0532.html'},
     {titulo:'Todo Mundo Odeia o Chris', imagem:'https://imgur.com/yemtk0e.png', url:'/todo-mundo-odeia-o-chris-dublado-lista-completa-de-episodios-video_09d0a0ea6.html'},
@@ -231,11 +243,12 @@
           btn2 = "Ilhas Laranja"; l2 = "https://www.youtube.com/playlist?list=PLRcHmntfmJ8AtnKq7EHNIQBUNTs85bqwS";
           btn3 = "Liga Johto"; l3 = "https://www.youtube.com/playlist?list=PLRcHmntfmJ8DB8wgMrUZwf3JGkLM17yeL";
         } else if (card.titulo === "Futebol") {
-          btn1 = "Jogos Ao Vivo"; l1 = "https://multicanais.global/";
-          btn2 = "Cronograma"; l2 = "https://ge.globo.com/agenda/#/futebol";
-          btn3 = "Jogos do SPFC"; l3 = "https://pbs.twimg.com/media/Gpo8lWcX0AA2iZu?format=jpg&name=large";
+          btn1 = "Jogos Ao Vivo"; l1 = "https://multicanais.maison/";
+          btn2 = "Cronograma";
+          // Link atualizado com data dinâmica
+          l2 = `https://www.espn.com.br/futebol/calendario/_/data/${dataAtual}`;
+          btn3 = "Cronograma SPFC"; l3 = "https://www.espn.com.br/futebol/time/calendario/_/id/2026/sao-paulo";
         } else if (card.titulo === "Lives LoL") {
-          // NOVA CONDIÇÃO: card Lives LoL com três opções
           btn1 = "Nicole Diretora"; l1 = "https://www.youtube.com/@NicoleDiretora/streams";
           btn2 = "Riyuuka"; l2 = "https://www.youtube.com/@LivesdaRiyuuka/streams";
           btn3 = "Kick TV"; l3 = "https://kick.com/following";

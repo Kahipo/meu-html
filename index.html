@@ -122,19 +122,41 @@
 
     if (card.customMenu) {
       let menuHTML = '';
-      if (card.menuType === "grid" && card.titulo === "F1") {
-        // Menu especial da F1 com minicards
-        menuHTML = `
-          <div class="dropdown grid-dropdown" id="${droId}">
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-1'"><img src="https://imgur.com/kFiyepL.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-2'"><img src="https://imgur.com/ud1brHs.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-3'"><img src="https://imgur.com/WKWWGNF.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-classificacao-sprint'"><img src="https://imgur.com/R8ioqM3.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-classificacao'"><img src="https://imgur.com/ZaEaWDB.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-corrida'"><img src="https://imgur.com/OR6qeav.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='http://f1.com'"><img src="https://imgur.com/A0pAYwq.png"></div>
-            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-corrida-sprint'"><img src="https://imgur.com/SF3fsaa.png"></div>
-          </div>`;
+            if (card.menuType === "grid" && card.titulo === "F1") {
+        document.write(`
+          <div class="card" id="${id}" data-custom="true">
+            <a href="javascript:void(0)" class="image-container" onclick="toggleDropdown('${droId}','grid')">
+              <img src="${card.imagem}" alt="${card.titulo}">
+              <div class="dropdown grid-dropdown" id="${droId}">
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-1')">
+                  <img src="https://imgur.com/kFiyepL.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-2')">
+                  <img src="https://imgur.com/ud1brHs.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-3')">
+                  <img src="https://imgur.com/WKWWGNF.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-classificacao-sprint')">
+                  <img src="https://imgur.com/R8ioqM3.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-classificacao')">
+                  <img src="https://imgur.com/ZaEaWDB.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-corrida')">
+                  <img src="https://imgur.com/OR6qeav.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('http://f1.com')">
+                  <img src="https://imgur.com/A0pAYwq.png" alt="F1">
+                </div>
+                <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-corrida-sprint')">
+                  <img src="https://imgur.com/SF3fsaa.png" alt="F1">
+                </div>
+              </div>
+            </a>
+            <p>${card.titulo}</p>
+          </div>
+        `);
       } else if (card.menuType === "three-gbs") {        menuHTML = `
           <div class="dropdown" id="${droId}">
             <div class="dropdown-item" onclick="window.location.href='https://globoplay.globo.com/tv-globo/ao-vivo/6120663/'">Globo</div>

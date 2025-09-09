@@ -59,138 +59,6 @@
       border: 1px solid #444;
       box-sizing: border-box;
     }
-    .dropdown.grid-dropdown {
-      height: 120px;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 60px);
-      gap: 2px;
-    }
-    .dropdown.twitch-grid {
-      height: 120px;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 120px;
-      gap: 2px;
-    }
-    #f1-card .dropdown.grid-dropdown .dropdown-item {
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    #f1-card .dropdown.grid-dropdown .dropdown-item img {
-      max-width: 90px;
-      max-height: 60px;
-      object-fit: contain;
-    }
-    #twitch-tv-card .dropdown.twitch-grid .dropdown-item {
-      height: 120px;
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      padding: 0;
-    }
-    #twitch-tv-card .dropdown.twitch-grid .dropdown-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .dropdown-item {
-      padding: 12px;
-      font-size: 13px;
-      border-bottom: 1px solid #444;
-      width: 100%;
-      box-sizing: border-box;
-      user-select: none;
-      cursor: pointer;
-    }
-    .dropdown-item:last-child {
-      border-bottom: none;
-    }
-    .dropdown-item:hover {
-      background: #444;
-    }
-    @media (min-width: 768px) {
-      .card { width: 250px; }
-    }
-  </style>
-</head>
-<body>
-<script>
-  // Domínio para links relativos
-  const dominioRedeCanais = 'https://redecanais.ee';
-
-  // Cálculo da data atual no formato AAAAMMDD
-  function pad(valor) {
-    return valor < 10 ? '0' + valor : valor;
-  }
-  const hoje = new Date();
-  const ano = hoje.getFullYear();
-  const mes = pad(hoje.getMonth() + 1);
-  const dia = pad(hoje.getDate());
-  const dataAtual = `${ano}${mes}${dia}`;
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://i.imgur.com/puEc6EX.png" type="image/png">
-  <meta name="theme-color" content="#222222">
-  <title>Dattebayo!</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 20px;
-      background-color: #222;
-      color: #fff;
-    }
-    .card {
-      width: 220px;
-      margin: 10px;
-      text-align: center;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .image-container {
-      position: relative;
-      width: 100%;
-    }
-    .card a {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      margin-top: 10px;
-    }
-    .card p {
-      margin: 10px 0 0;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      transition: filter .3s, transform .3s;
-      display: block;
-    }
-    .card img:hover {
-      filter: brightness(.4);
-      transform: scale(1.05);
-    }
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,.95);
-      border: 1px solid #444;
-      box-sizing: border-box;
-    }
     .dropdown-item {
       padding: 12px;
       font-size: 13px;
@@ -221,7 +89,6 @@
     {titulo:'Eu, a Patroa e as Crianças', imagem:'https://imgur.com/14DuhR0.png', url:'/eu-a-patroa-e-as-criancas-dublado-lista-de-episodios_166813daf.html'},
     {titulo:'The Big Bang Theory', imagem:'https://imgur.com/ZEx8M0x.png', url:'/browse-the-big-bang-theory-videos-1-date.html'},
     {titulo:'Pokémon', imagem:'https://imgur.com/IpmwyKZ.png', customMenu:true, menuType:"three"},
-    // Lives LoL agora link único
     {titulo:'Lives LoL', imagem:'https://imgur.com/sepZ0Q2.png', url:'brave://bookmarks/?id=686', externo:true},
     {titulo:'Padrinhos Mágicos', imagem:'https://imgur.com/lrYc9Od.png', url:'/browse-os-padrinhos-magicos-dublado-videos-1-date.html'},
     {titulo:'House MD', imagem:'https://imgur.com/afJWJUp.png', url:'/dr-house-dublado-legendado-lista-de-episodios_66936cb25.html'},
@@ -231,9 +98,7 @@
     {titulo:'Dragon Ball Z', imagem:'https://imgur.com/CKOqimV.png', url:'https://www.anroll.net/a/c6OpnXQVIb', externo:true},
     {titulo:'Chaves', imagem:'https://imgur.com/8f2eB5t.png', url:'https://www.youtube.com/playlist?list=PLGHuTL_zxL8oEYpXodF-9hCazhyzySnA2', externo:true},
     {titulo:'Rebelde', imagem:'https://imgur.com/CtlqRtB.png', url:'https://www.youtube.com/playlist?list=PLLTBRifDXIy_0ptz_XRs37oM6Hu8K47L7', externo:true},
-    // Novo card Globo, Band, SBT
     {titulo:'Globo, Band, SBT', imagem:'https://imgur.com/Abw0Z2l.png', customMenu:true, menuType:"three-gbs"},
-    // Novo card Anroll, AnimesDrive, Bakashi
     {titulo:'Anroll, AnimesDrive, Bakashi', imagem:'https://imgur.com/cnmLwNg.png', customMenu:true, menuType:"three-animes"}
   ];
 
@@ -272,61 +137,42 @@
             <div class="dropdown-item" onclick="window.location.href='https://bakashi.tv/'">Bakashi</div>
           </div>`;
       } else if (card.menuType === "three" && card.titulo === "Pokémon") {
-  menuHTML = `
-    <div class="dropdown" id="${droId}">
-      <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8CnSmj4C284-a1euH518aQa'">Liga Índigo</div>
-      <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8AtnKq7EHNIQBUNTs85bqwS'">Ilhas Laranja</div>
-      <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8DB8wgMrUZwf3JGkLM17yeL'">Liga Johto</div>
-    </div>`;
-} else if (card.menuType === "three" && card.titulo === "Futebol") {
-  menuHTML = `
-    <div class="dropdown" id="${droId}">
-      <div class="dropdown-item" onclick="window.location.href='https://multicanaisw.online/'">Multicanais</div>
-      <div class="dropdown-item" onclick="window.location.href='https://canaisplay.zip/'">Canaisplay</div>
-      <div class="dropdown-item" onclick="window.location.href='https://www.espn.com.br/futebol/time/calendario/_/id/2026/sao-paulo'">Cronograma SPFC</div>
-    </div>`;
-} else {
-  // Caso padrão para outros menus de 3 opções
-  menuHTML = `
-    <div class="dropdown" id="${droId}">
-      <div class="dropdown-item" onclick="window.location.href='https://example.com/opcao1'">Opção 1</div>
-      <div class="dropdown-item" onclick="window.location.href='https://example.com/opcao2'">Opção 2</div>
-      <div class="dropdown-item" onclick="window.location.href='https://example.com/opcao3'">Opção 3</div>
-    </div>`;
-}
+        menuHTML = `
+          <div class="dropdown" id="${droId}">
+            <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8CnSmj4C284-a1euH518aQa'">Liga Índigo</div>
+            <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8AtnKq7EHNIQBUNTs85bqwS'">Ilhas Laranja</div>
+            <div class="dropdown-item" onclick="window.location.href='https://www.youtube.com/playlist?list=PLRcHmntfmJ8DB8wgMrUZwf3JGkLM17yeL'">Liga Johto</div>
+          </div>`;
+      } else if (card.menuType === "three" && card.titulo === "Futebol") {
+        menuHTML = `
+          <div class="dropdown" id="${droId}">
+            <div class="dropdown-item" onclick="window.location.href='https://multicanaisw.online/'">Multicanais</div>
+            <div class="dropdown-item" onclick="window.location.href='https://canaisplay.zip/'">Canaisplay</div>
+            <div class="dropdown-item" onclick="window.location.href='https://www.espn.com.br/futebol/time/calendario/_/id/2026/sao-paulo'">Cronograma SPFC</div>
+          </div>`;
+      }
 
-document.write(`
-  <div class="card" id="${id}" data-custom="true">
-    <a href="javascript:void(0)" class="image-container" onclick="toggleDropdown('${droId}')">
-      <img src="${card.imagem}" alt="${card.titulo}">
-      ${menuHTML}
-    </a>
-    <p>${card.titulo}</p>
-  </div>
-`);
-} else {
-  const lf = card.externo ? card.url : (dominioRedeCanais + card.url);
-  document.write(`
-    <div class="card">
-      <a href="${lf}" class="image-container">
-        <img src="${card.imagem}" alt="${card.titulo}">
-      </a>
-      <p>${card.titulo}</p>
-    </div>
-  `);
-}
-});
-</script>
-
-<!-- Trecho que antes forçava abrir em nova aba, agora comentado -->
-<!--
-document.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    window.open(a.href, '_blank');
+      document.write(`
+        <div class="card" id="${id}" data-custom="true">
+          <a href="javascript:void(0)" class="image-container" onclick="toggleDropdown('${droId}')">
+            <img src="${card.imagem}" alt="${card.titulo}">
+            ${menuHTML}
+          </a>
+          <p>${card.titulo}</p>
+        </div>
+      `);
+    } else {
+      const lf = card.externo ? card.url : (dominioRedeCanais + card.url);
+      document.write(`
+        <div class="card">
+          <a href="${lf}" class="image-container">
+            <img src="${card.imagem}" alt="${card.titulo}">
+          </a>
+          <p>${card.titulo}</p>
+        </div>
+      `);
+    }
   });
-});
--->
-
+</script>
 </body>
 </html>

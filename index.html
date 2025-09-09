@@ -126,7 +126,7 @@
         {titulo:'The Big Bang Theory', imagem:'https://imgur.com/ZEx8M0x.png', url:'/browse-the-big-bang-theory-videos-1-date.html'},
         {titulo:'Pokémon', imagem:'https://imgur.com/IpmwyKZ.png', customMenu:true, menuType:"three"},
         {titulo:'Lives LoL', imagem:'https://imgur.com/sepZ0Q2.png', url:'brave://bookmarks/?id=686', externo:true},
-        {titulo:'Padrinhos Mágicos', imagem:'https://imgur.com/lrYc9Od.png', url:'/browse-os-padrinhos-magicos-dublado-videos-1-date.html'},
+        {titulo:'Padrinhos Mágicos', imagem:'https://imgur.com/lrYc9Od.png', url:'/browse-os-padrinhos-magicos-videos-1-date.html'},
         {titulo:'House MD', imagem:'https://imgur.com/afJWJUp.png', url:'/dr-house-dublado-legendado-lista-de-episodios_66936cb25.html'},
         {titulo:'Futebol', imagem:'https://imgur.com/eNALdJX.png', customMenu:true, menuType:"three"},
         {titulo:'Youtube', imagem:'https://imgur.com/2r0Lgg6.png', url:'https://www.youtube.com/feed/history', externo:true},
@@ -135,7 +135,7 @@
         {titulo:'Chaves', imagem:'https://imgur.com/8f2eB5t.png', url:'https://www.youtube.com/playlist?list=PLGHuTL_zxL8oEYpXodF-9hCazhyzySnA2', externo:true},
         {titulo:'Rebelde', imagem:'https://imgur.com/CtlqRtB.png', url:'https://www.youtube.com/playlist?list=PLLTBRifDXIy_0ptz_XRs37oM6Hu8K47L7', externo:true},
         {titulo:'Globo, Band, SBT', imagem:'https://imgur.com/Abw0Z2l.png', customMenu:true, menuType:"three-gbs"},
-        {titulo:'Anroll, AnimesDrive, Bakashi', imagem:'https://imgur.com/cnmLwNg.png', customMenu:true, menuType:"three-animes"}
+        {titulo:'Animes', imagem:'https://imgur.com/cnmLwNg.png', customMenu:true, menuType:"three-animes"}
     ];
 
     function toggleDropdown(id) {
@@ -163,14 +163,14 @@
                 // Grade de 8 opções para F1
                 menuHTML = `
                 <div class="dropdown eight-grid" id="${droId}">
-                    <div class="dropdown-item">texto1</div>
-                    <div class="dropdown-item">texto2</div>
-                    <div class="dropdown-item">texto3</div>
-                    <div class="dropdown-item">texto4</div>
-                    <div class="dropdown-item">texto5</div>
-                    <div class="dropdown-item">texto6</div>
-                    <div class="dropdown-item">texto7</div>
-                    <div class="dropdown-item">texto8</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-1')">TL1</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-2')">TL2</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-treino-livre-3')">TL3</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-classificacao')">Classify</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-corrida')">Corrida</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-classificacao-sprint')">Classify Sprint</div>
+                    <div class="dropdown-item" onclick="window.open('https://bandplay.com/formula-1-corrida-sprint')">Corrida Sprint</div>
+                    <div class="dropdown-item" onclick="window.open('http://f1.com')">Notícias F1</div>
                 </div>`;
             } else if (card.menuType === "three-gbs") {
                 menuHTML = `

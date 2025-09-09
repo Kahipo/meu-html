@@ -57,13 +57,12 @@
         }
 
         .dropdown {
+            /* O display: none; faz o menu ficar invisível por padrão. */
             display: none;
             position: absolute;
-            /* Início das linhas adicionadas para centralizar o menu */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            /* Fim das linhas adicionadas */
             width: 100%;
             background: rgba(0,0,0,.95);
             border: 1px solid #444;
@@ -88,7 +87,7 @@
             background: #444;
         }
 
-        /* Grade de 8 opções (4 colunas × 2 linhas) */
+        /* Esta regra de CSS é a que cria a grade de 8 itens. */
         .dropdown.eight-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);

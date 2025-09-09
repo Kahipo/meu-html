@@ -122,8 +122,20 @@
 
     if (card.customMenu) {
       let menuHTML = '';
-      if (card.menuType === "three-gbs") {
+      if (card.menuType === "grid" && card.titulo === "F1") {
+        // Menu especial da F1 com minicards
         menuHTML = `
+          <div class="dropdown grid-dropdown" id="${droId}">
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-1'"><img src="https://imgur.com/kFiyepL.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-2'"><img src="https://imgur.com/ud1brHs.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-treino-livre-3'"><img src="https://imgur.com/WKWWGNF.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-classificacao-sprint'"><img src="https://imgur.com/R8ioqM3.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-classificacao'"><img src="https://imgur.com/ZaEaWDB.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-corrida'"><img src="https://imgur.com/OR6qeav.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='http://f1.com'"><img src="https://imgur.com/A0pAYwq.png"></div>
+            <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/formula-1-corrida-sprint'"><img src="https://imgur.com/SF3fsaa.png"></div>
+          </div>`;
+      } else if (card.menuType === "three-gbs") {        menuHTML = `
           <div class="dropdown" id="${droId}">
             <div class="dropdown-item" onclick="window.location.href='https://globoplay.globo.com/tv-globo/ao-vivo/6120663/'">Globo</div>
             <div class="dropdown-item" onclick="window.location.href='https://bandplay.com/band-ao-vivo'">Band</div>
